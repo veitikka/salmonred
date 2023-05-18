@@ -14,7 +14,7 @@ base-image: ghcr.io/ublue-os/silverblue-main
 fedora-version: 38
 
 # This description will be visible in the container metadata.
-description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
+description: Customized Silverblue for personal use
 
 # These scripts will be executed during the container build.
 # Place scripts in the "scripts/" dir and put the corresponding filenames here.
@@ -64,9 +64,14 @@ rpm:
     # Add your own below:
     # Example:
     # - tilix
+
+    # File transfer
     - syncthing
     - rsync
-
+    # Development
+    - distrobox
+    # Media
+    - mpv
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
@@ -94,4 +99,4 @@ firstboot:
     - org.kde.krita
     - org.keepassxc.KeePassXC
     - com.github.tchx84.Flatseal
-    -
+    - io.beekeeperstudio.Studio
